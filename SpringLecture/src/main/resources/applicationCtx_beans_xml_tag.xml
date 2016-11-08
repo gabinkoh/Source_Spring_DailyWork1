@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="book1" class="exam_02_beans_xml_tag.BookEntity" >
+		<property name="btitle">
+			<value>파우스트</value>
+		</property>
+		<property name="bauthor" value="괴테"/>
+	</bean>
+	
+	<bean id="book2" class="exam_02_beans_xml_tag.BookEntity" >
+		<property name="btitle" value="레 미제라블"/>
+		<property name="bauthor" value="괴테"/>
+	</bean>
+	
+	<bean id="book3" class="exam_02_beans_xml_tag.BookEntity" >
+		<property name="btitle" value="파우스트"/>
+		<property name="bauthor" value="괴테"/>
+	</bean>
+	
+	<bean id="bookshelf" class="exam_02_beans_xml_tag.BookShelf">
+		<property name="title" value="만화책장"/>
+		<property name="price" value="100000"/>
+		<property name="booksList">
+			<list>
+				<ref bean="book1" />
+				<ref bean="book2" />
+				<ref bean="book3" />
+			</list>
+		</property>
+		<property name="booksMap">
+			<map>
+				<entry key="1" value-ref="book1"></entry>
+				<entry key="2" value-ref="book2"></entry>
+				<entry key="3" value-ref="book3"></entry>
+			</map>
+		</property>
+	</bean>
+
+	
+	
+</beans>
